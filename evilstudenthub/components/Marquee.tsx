@@ -3,34 +3,49 @@
 import { IoPersonSharp } from "react-icons/io5";
 import { FaFire, FaBolt } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi2";
+import type { IconType } from "react-icons";
 
 type MarqueeItem = {
-    icon: React.ReactNode;
-    text: string;
+  Icon: IconType;
+  Text: string;
 };
 
 const items: MarqueeItem[] = [
-    { icon: <IoPersonSharp />, text: "7 NEW MEMBERS JOINED THE HUB" },
-    { icon: <FaBolt />, text: "SUCCESS RATE UP TO 78%" },
-    { icon: <FaFire />, text: "128 FRESH NOTES DROPPED THIS WEEK" },
-    { icon: <FaBolt />, text: "FINALS SEASON IS COMING" },
-    { icon: <HiUserGroup />, text: "7 NEW MEMBERS JOINED THE HUB" },
+  { Icon: IoPersonSharp, Text: "7 NEW MEMBERS JOINED THE HUB" },
+  { Icon: FaBolt, Text: "SUCCESS RATE UP TO 78%" },
+  { Icon: FaFire, Text: "128 FRESH NOTES DROPPED THIS WEEK" },
+  { Icon: FaBolt, Text: "FINALS SEASON IS COMING" },
+  { Icon: HiUserGroup, Text: "7 NEW MEMBERS JOINED THE HUB" },
 ];
 
-export default function Marquee() {
-    return (
-        <div className="bg-black h-12 mx-8 rounded-xl mt-8 overflow-hidden flex items-center w-[92vw]">
-            <div className="flex animate-marquee whitespace-nowrap">
-                {[...items, ...items].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 mx-4">
-            <span className="text-[#0ed72f] flex items-center gap-2 text-sm font-semibold tracking-wide">
-              {item.icon}
-                {item.text}
-            </span>
-                        <span className="text-[#0ed72f] opacity-40 ml-4">/</span>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+function Track() {
+  return (
+    <>
+      {items.map(({ Icon, Text }, i) => (
+        <span
+          key={i}
+          className="flex items-center gap-2 px-6 text-sm leading-none font-semibold tracking-wide text-[#0ed72f]"
+        >
+          <Icon className="h-3.5 w-3.5 shrink-0" />
+          {Text}
+          <span className="pl-6 opacity-40">/</span>
+        </span>
+      ))}
+    </>
+  );
+}
+
+export default function Marquee({
+  ClassNameForMarquee = "mx-8 mt-8 flex h-12 items-center overflow-hidden rounded-xl bg-black",
+}: {
+  ClassNameForMarquee?: string;
+}) {
+  return (
+    <div className={ClassNameForMarquee}>
+      <div className="flex w-max animate-marquee items-center whitespace-nowrap hover:[animation-play-state:paused]">
+        <Track />
+        <Track />
+      </div>
+    </div>
+  );
 }

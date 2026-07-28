@@ -1,4 +1,5 @@
 import { IoHomeOutline } from "react-icons/io5";
+import { CgNotes } from "react-icons/cg";
 import NavButton from "@/components/NavButton";
 
 export default function SideBar({
@@ -11,11 +12,11 @@ export default function SideBar({
       <aside className="flex min-h-screen">
         <div className="flex flex-col items-center justify-center">
           <NavButton Icon={IoHomeOutline} isActive={true} PageLink="/home" />
-          <NavButton Icon={IoHomeOutline} isActive={false} PageLink="/home" />
+          <NavButton Icon={CgNotes} isActive={false} PageLink="/notes" />
           <NavButton Icon={IoHomeOutline} isActive={true} PageLink="/home" />
         </div>
       </aside>
-      <main className="flex-1">{children}</main>
+      <main className="min-w-0 flex-1">{children}</main>
     </div>
   );
 }

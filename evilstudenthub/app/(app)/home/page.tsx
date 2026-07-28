@@ -21,7 +21,7 @@ export default function Home() {
             </p>
           </div>
 
-          <SearchBar PlaceHolderText="Search here" />
+          <SearchBar PlaceHolderText="Search here" MaxWidth={"400"}/>
 
           <div className="flex items-center gap-2">
             <BannerButton Label="Calendar" Icon={CiCalendar} />
