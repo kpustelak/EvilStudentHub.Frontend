@@ -3,6 +3,77 @@ import { GiAerialSignal } from "react-icons/gi";
 import { HiOutlineCloudUpload } from "react-icons/hi";
 import Marquee from "@/components/Marquee";
 import CapsuleButton from "@/components/CapsuleButton";
+import NoteBlock from "@/components/NoteBlock";
+
+const notes = [
+  {
+    FileType: "PDF",
+    Subject: "Math",
+    AccentColor: "#e8e0ff",
+    AccentTextColor: "#5b21b6",
+    AvatarColor: "#ddd6fe",
+    HeaderText: "Calculus II — Midterm Summary",
+    DescriptionText:
+      "Derivatives, integrals and the theorems you actually need before the exam. Clean structure, zero fluff.",
+    StudentName: "Kornel P.",
+    NoteReleaseDate: "2 days ago",
+    DownloadCount: 214,
+    StarGrade: 4.9,
+    IsFeatured: true,
+  },
+  {
+    FileType: "DOCX",
+    Subject: "Physics",
+    AccentColor: "#d8f5de",
+    AccentTextColor: "#166534",
+    AvatarColor: "#bbf7d0",
+    HeaderText: "Thermodynamics cheat sheet",
+    DescriptionText: "Laws, formulas and common exam traps in one page.",
+    StudentName: "Ania K.",
+    NoteReleaseDate: "5 days ago",
+    DownloadCount: 88,
+    StarGrade: 4.6,
+  },
+  {
+    FileType: "PDF",
+    Subject: "CS",
+    AccentColor: "#d6eaff",
+    AccentTextColor: "#1e40af",
+    AvatarColor: "#bfdbfe",
+    HeaderText: "Algorithms — Sorting & Complexity",
+    DescriptionText: "Big-O cheat sheet with examples for each sort.",
+    StudentName: "Marek W.",
+    NoteReleaseDate: "1 week ago",
+    DownloadCount: 156,
+    StarGrade: 4.8,
+  },
+  {
+    FileType: "PDF",
+    Subject: "Chemistry",
+    AccentColor: "#ffe4c4",
+    AccentTextColor: "#9a3412",
+    AvatarColor: "#fed7aa",
+    HeaderText: "Organic reactions map",
+    DescriptionText: "Mechanisms grouped by functional group.",
+    StudentName: "Ola R.",
+    NoteReleaseDate: "3 days ago",
+    DownloadCount: 67,
+    StarGrade: 4.4,
+  },
+  {
+    FileType: "PDF",
+    Subject: "Biology",
+    AccentColor: "#fce7f3",
+    AccentTextColor: "#9d174d",
+    AvatarColor: "#fbcfe8",
+    HeaderText: "Cell biology flash notes",
+    DescriptionText: "Organelles, mitosis and key exam diagrams.",
+    StudentName: "Tomek L.",
+    NoteReleaseDate: "4 days ago",
+    DownloadCount: 102,
+    StarGrade: 4.7,
+  },
+];
 
 export default function Notes() {
   return (
@@ -48,6 +119,12 @@ export default function Notes() {
           <CapsuleButton IsActive={false} ButtonText="Chemistry" />
           <CapsuleButton IsActive={false} ButtonText="Physic" />
         </div>
+      </div>
+
+      <div className="mx-8 mt-6 grid auto-rows-fr grid-flow-dense gap-4 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
+        {notes.map((note) => (
+          <NoteBlock key={note.HeaderText} {...note} />
+        ))}
       </div>
     </div>
   );
