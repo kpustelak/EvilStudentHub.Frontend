@@ -3,6 +3,8 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import SearchBar from "@/components/SearchBar";
 import BannerButton from "@/components/BannerButton";
 import BannerCard from "@/components/BannerCard";
+import {IoPersonSharp} from "react-icons/io5";
+import Marquee from "@/components/Marquee";
 
 export default function Home() {
   return (
@@ -49,6 +51,7 @@ export default function Home() {
             />
         </div>
       </div>
+        <Marquee />
     </div>
   );
 }
