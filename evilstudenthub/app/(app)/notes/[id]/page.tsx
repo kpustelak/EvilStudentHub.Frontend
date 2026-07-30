@@ -8,6 +8,7 @@ import {
 } from "react-icons/hi2";
 import { GoInfo } from "react-icons/go";
 import { HiOutlineBookmark } from "react-icons/hi";
+import Button from "@/components/Button";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -54,7 +55,7 @@ export default async function NotePage({ params }: Props) {
   return (
     <div className="h-full w-full bg-[#eceef1] py-6">
       <div className="mx-8 overflow-hidden rounded-3xl bg-black">
-        <div className="flex min-h-[280px] flex-col justify-between gap-8 px-8 pt-8 pb-7">
+        <div className="flex min-h-70 flex-col justify-between gap-8 px-8 pt-8 pb-7">
           <div className="min-w-0">
             <Link
               href="/notes"
@@ -114,7 +115,7 @@ export default async function NotePage({ params }: Props) {
       <div className="mx-8 mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
         <div className="w-full rounded-3xl bg-white p-6 shadow-[0_8px_28px_rgba(0,0,0,0.06)] lg:w-3/5">
           <div
-            className="relative flex min-h-[220px] flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300 px-6 py-10"
+            className="relative flex min-h-55 flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300 px-6 py-10"
             style={{
               backgroundColor: "#f7f7f7",
               backgroundImage:
@@ -162,30 +163,14 @@ export default async function NotePage({ params }: Props) {
                 </div>
               ))}
             </div>
-
-            <button
-              type="button"
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-3 text-sm font-bold tracking-wide text-white uppercase transition hover:bg-neutral-800"
-            >
+            <Button type="primary">
               <HiArrowDownTray className="h-4 w-4" />
               Download
-            </button>
+            </Button>
 
             <div className="mt-3 grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2.5 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50"
-              >
-                <HiOutlineBookmark className="h-4 w-4" />
-                Save
-              </button>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2.5 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50"
-              >
-                <FaFlag className="h-3.5 w-3.5" />
-                Report
-              </button>
+              <Button type="secondary"> <HiOutlineBookmark className="h-4 w-4" /> Save </Button>
+              <Button type="secondary"> <FaFlag className="h-3.5 w-3.5" /> Report </Button>
             </div>
           </div>
 
