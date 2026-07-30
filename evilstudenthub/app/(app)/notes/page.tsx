@@ -7,6 +7,7 @@ import NoteBlock from "@/components/NoteBlock";
 
 const notes = [
   {
+    id: "calculus-ii",
     FileType: "PDF",
     Subject: "Math",
     AccentColor: "#e8e0ff",
@@ -22,6 +23,7 @@ const notes = [
     IsFeatured: true,
   },
   {
+    id: "thermodynamics",
     FileType: "DOCX",
     Subject: "Physics",
     AccentColor: "#d8f5de",
@@ -35,6 +37,7 @@ const notes = [
     StarGrade: 4.6,
   },
   {
+    id: "algorithms",
     FileType: "PDF",
     Subject: "CS",
     AccentColor: "#d6eaff",
@@ -48,6 +51,7 @@ const notes = [
     StarGrade: 4.8,
   },
   {
+    id: "organic-reactions",
     FileType: "PDF",
     Subject: "Chemistry",
     AccentColor: "#ffe4c4",
@@ -61,6 +65,7 @@ const notes = [
     StarGrade: 4.4,
   },
   {
+    id: "cell-biology",
     FileType: "PDF",
     Subject: "Biology",
     AccentColor: "#fce7f3",
@@ -122,8 +127,8 @@ export default function Notes() {
       </div>
 
       <div className="mx-8 mt-6 grid auto-rows-fr grid-flow-dense gap-4 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
-        {notes.map((note) => (
-          <NoteBlock key={note.HeaderText} {...note} />
+        {notes.map(({ id, ...note }) => (
+          <NoteBlock key={id} {...note} Href={`/notes/${id}`} />
         ))}
       </div>
     </div>
