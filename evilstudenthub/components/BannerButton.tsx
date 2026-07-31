@@ -1,31 +1,29 @@
 import { IconType } from "react-icons";
 
-function BannerButton({
-  Label,
-  Icon,
-  Text,
-  ClassName = "bg-white/30 hover:bg-white/40",
-  IconClassName = "text-white",
+export default function BannerButton({
+  label,
+  icon: Icon,
+  text,
+  className = "bg-white/30 hover:bg-white/40",
+  iconClassName = "text-white",
 }: {
-  Label: string;
-  Icon?: IconType;
-  Text?: string;
-  ClassName?: string;
-  IconClassName?: string;
+  label: string;
+  icon?: IconType;
+  text?: string;
+  className?: string;
+  iconClassName?: string;
 }) {
   return (
     <button
       type="button"
-      aria-label={Label}
-      className={`flex h-10 w-10 items-center justify-center rounded-full p-2 transition ${ClassName}`}
+      aria-label={label}
+      className={`flex size-10 items-center justify-center rounded-full p-2 transition ${className}`}
     >
       {Icon ? (
-        <Icon className={`h-6 w-6 ${IconClassName}`} />
+        <Icon className={`size-6 ${iconClassName}`} />
       ) : (
-        <span className="text-sm font-semibold text-black">{Text}</span>
+        <span className="text-sm font-semibold text-black">{text}</span>
       )}
     </button>
   );
 }
-
-export default BannerButton;
