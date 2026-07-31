@@ -4,12 +4,59 @@
   --background: #ffffff;
   --foreground: #171717;
   --brand-green: #0ed72f;
+  --brand-green-hover: #0bc428;
+  --page-bg: #eceef1;
+  --accent-lilac: #e8e0ff;
+  --accent-lilac-text: #5b21b6;
+  --accent-mint: #d8f5de;
+  --accent-sky: #d6eaff;
+  --accent-cream: #fffdd0;
+  --accent-info: #e8f6ec;
+  --accent-info-text: #1f6b3a;
+  --surface-muted: #f7f7f7;
+  --surface-chip: #f3f3f3;
+  --star: #f2d94d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand: var(--brand-green);
+  --color-brand-hover: var(--brand-green-hover);
+  --color-page: var(--page-bg);
+  --color-accent-lilac: var(--accent-lilac);
+  --color-accent-lilac-text: var(--accent-lilac-text);
+  --color-accent-mint: var(--accent-mint);
+  --color-accent-sky: var(--accent-sky);
+  --color-accent-cream: var(--accent-cream);
+  --color-accent-info: var(--accent-info);
+  --color-accent-info-text: var(--accent-info-text);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-chip: var(--surface-chip);
+  --color-star: var(--star);
+
+  --text-micro: 0.65rem;
+  --text-caption: 0.68rem;
+  --text-tiny: 0.72rem;
+  --text-label: 0.78rem;
+
+  --radius-card: 22px;
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 14px 36px rgba(0, 0, 0, 0.1);
+  --shadow-banner: 0 10px 32px rgba(0, 0, 0, 0.07);
+  --shadow-banner-hover: 0 18px 40px rgba(0, 0, 0, 0.12);
+
   --font-sans: var(--font-inter);
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 html,
